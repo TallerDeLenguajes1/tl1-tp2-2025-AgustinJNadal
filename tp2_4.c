@@ -31,6 +31,7 @@ int main(){
     
     listarPCs(pcs, num_pcs);
     mostrarMasVieja(pcs, num_pcs);
+    mostrarMasVeloz(pcs, num_pcs);
 
     free(pcs);
     return 0;
@@ -51,7 +52,7 @@ void listarPCs(Compu *pcs, int num_pcs){
 
 void mostrarMasVieja(Compu *pcs, int num_pcs){
     Compu *vieja = &pcs[1];
-    for (int i = 2; i < num_pcs; i++)
+    for (int i = 2; i <= num_pcs; i++)
     {
         if (pcs[i].anio < vieja->anio)
         {
@@ -64,5 +65,23 @@ void mostrarMasVieja(Compu *pcs, int num_pcs){
     printf("Anio de fabricacion: %d\n", vieja->anio);
     printf("Cantidad de nucleos: %d\n", vieja->cantidad_nucleos);
     printf("Tipo de procesador: %s\n", vieja->tipo_cpu);
+    puts("-----------------------------------");
+}
+
+void mostrarMasVeloz(Compu *pcs, int num_pcs){
+    Compu *veloz = &pcs[1];
+    for (int i = 2; i <= num_pcs; i++)
+    {
+        if (pcs[i].velocidad > veloz->velocidad)
+        {
+            veloz = &pcs[i];
+        }
+    }
+    puts("-----------------------------------");
+    printf("PC mas veloz:\n");
+    printf("Velocidad de procesamiento: %d GHz\n", veloz->velocidad);
+    printf("Anio de fabricacion: %d\n", veloz->anio);
+    printf("Cantidad de nucleos: %d\n", veloz->cantidad_nucleos);
+    printf("Tipo de procesador: %s\n", veloz->tipo_cpu);
     puts("-----------------------------------");
 }
