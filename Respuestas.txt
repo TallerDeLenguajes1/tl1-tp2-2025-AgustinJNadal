@@ -1,0 +1,8 @@
+¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+No, no puedo ver el archivo porque está ubicado en otra rama diferente a la main, para poder trabajar con ese archivo sin modificar la rama principal.
+
+¿Qué diferencias nota?
+Se muestra la rama "Opcion_2" separada de la principal.
+
+¿Qué nota?
+Ahora la rama "Opcion_2" que estaba separada se unió a la rama principal. 
