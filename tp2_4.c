@@ -29,6 +29,6 @@ int main(){
        pcs[i].tipo_cpu = tipos[rand() % 6];
     }
     
-    
+    free(pcs);
     return 0;
 }
