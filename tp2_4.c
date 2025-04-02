@@ -21,7 +21,7 @@ int main(){
     char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};    
 
     srand(time(NULL));
-    for (int i = 0; i < num_pcs; i++)
+    for (int i = 1; i <= num_pcs; i++)
     {
        pcs[i].velocidad = 1 + rand() % 3;
        pcs[i].anio = 2015 + rand() % (2024 - 2015 + 1);
@@ -29,6 +29,22 @@ int main(){
        pcs[i].tipo_cpu = tipos[rand() % 6];
     }
     
+    listarPCs(pcs, num_pcs);
+
     free(pcs);
     return 0;
+}
+
+void listarPCs(Compu *pcs, int num_pcs){
+    printf("Lista completa de las Pcs:\n");
+    for (int i = 1; i <= num_pcs; i++)
+    {
+        printf("PC %d:\n", i);
+        printf("Velocidad de procesamiento: %d GHz\n", pcs[i].velocidad);
+        printf("Anio de fabricacion: %d\n", pcs[i].anio);
+        printf("Cantidad de nucleos: %d\n", pcs[i].cantidad_nucleos);
+        printf("Tipo de procesador: %s\n", pcs[i].tipo_cpu);
+        puts("-----------------------------------");
+    }
+    
 }
