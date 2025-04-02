@@ -54,5 +54,6 @@ módulos.orden
 Módulo.symvers
 Archivo mk.old
 dkms.conf
+.vscode/
 
 # Fin de https://www.toptal.com/developers/gitignore/api/c
